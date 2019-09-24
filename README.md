@@ -1,5 +1,5 @@
 # tetris 俄罗斯方块
-<p>javascript实现的俄罗斯方块</p>
+<p>偶然看到大佬写的俄罗斯方块有感。自己动手，javascript实现了一个俄罗斯方块游戏。</p>
 <p>玩一玩：https://gzh-ms.github.io/tetris/dist/</p>
 <h2>效果预览</h2>
 <p><img src="https://github.com/gzh-ms/tetris/blob/master/001.gif" alt="img" /></p>
