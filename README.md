@@ -7,4 +7,4 @@
 <h2>响应式</h2>
 <p><img src="https://github.com/gzh-ms/tetris/blob/master/002.gif" alt="img" /></p>
 <h3>手机也能玩</h3>
-<p><img src="https://github.com/gzh-ms/tetris/blob/master/002.gif" alt="img" /></p>
+<p><img src="https://github.com/gzh-ms/tetris/blob/master/003.gif" alt="img" /></p>
