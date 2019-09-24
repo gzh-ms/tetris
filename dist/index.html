@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1"><title>俄罗斯方块</title><script>(function () {
+      var w = parseInt(window.screen.width),
+        u = navigator.userAgent.toLowerCase(),
+        s = w / 640,
+        m = '<meta name="viewport" content="width=640,';
+      if (/android (\d+\.\d+)/i.test(u)) {
+        if ((RegExp.$1) > 2.3) m += 'minimum-scale=' + s + ',maximum-scale=' + s + '">';
+      } else {
+        m += 'user-scalable=no">';
+      }
+      document.write(m);
+    })();</script><link href="style.css" rel="stylesheet"></head><body><div class="container" id="container"><div class="content"><div><!-- 标题分割线 --><div class="split"><span class="fl"></span> <span class="fl"></span> <span class="fl"></span> <span class="fl"></span> <span class="fl"></span> <span class="fr"></span> <span class="fr"></span> <span class="fr"></span> <span class="fr"></span> <span class="fr"></span></div><!-- 游戏区左边方块列表 --><div class="sidebar left"><em></em><div class="done"></div><div class="done"></div><div class="done"></div><div class="done"></div><p></p><div class="done"></div><em></em><div class="done"></div><div class="done"></div><div class="done"></div><p></p><div class="done"></div><div class="done"></div><div class="done"></div><div class="done"></div><p></p><em></em><div class="done"></div><div class="done"></div><div class="done"></div><em></em><div class="done"></div><p></p><div class="done"></div><div class="done"></div><em></em><div class="done"></div><em></em><div class="done"></div><p></p><div class="done"></div><em></em><div class="done"></div><em></em><div class="done"></div><em></em><div class="done"></div><em></em></div><!-- 游戏区右边方块列表 --><div class="sidebar right"><div class="done"></div><em></em><div class="done"></div><div class="done"></div><em></em><div class="done"></div><p></p><em></em><div class="done"></div><div class="done"></div><div class="done"></div><em></em><div class="done"></div><p></p><div class="done"></div><div class="done"></div><div class="done"></div><div class="done"></div><p></p><div class="done"></div><em></em><div class="done"></div><div class="done"></div><div class="done"></div><p></p><div class="done"></div><div class="done"></div><div class="done"></div><em></em><div class="done"></div><em></em><p></p><em></em><div class="done"></div><em></em><div class="done"></div><em></em><div class="done"></div><em></em><div class="done"></div></div><h1 class="title">俄罗斯方块</h1></div><div class="game-container"><div class="game-wrapper"><!-- 游戏区 --><div class="game" id="game"></div><!-- 恐龙 --><div class="dragon" id="dragon"><div class="dragon-pic dragon-eye dragon-walk dragon-walk-rotate"></div><p class="text-ch">俄罗斯方块</p><p class="text-en">TETRIS</p></div><!-- 下一个方块 --><div class="next-wrapper"><div class="text">下一块</div><div class="next" id="next"></div></div><!-- 信息 --><div class="info"><!-- 得分 --><div class="score-wrapper"><p class="score-name" id="score-name">得分</p><div id="score" class="score"></div></div><!-- 起始行 --><div class="line-wrapper"><p class="line-name">起始行</p><div id="line" class="line"></div></div><!-- 级别 --><div class="level-wrapper"><p class="level-name">级别</p><div id="level" class="level"></div></div><!-- 状态 --><div class="status"><div class="status-sound" id="status-sound"></div><div class="status-pause" id="status-pause"></div><div class="status-time" id="status-time"></div></div></div></div></div></div><div class="operate" id="operate"><!-- 暂停 --><div class="operate-btn pause small-btn" id="pause"><i></i> <span>暂停(P)</span></div><!-- 声音 --><div class="operate-btn sound small-btn" id="sound"><i></i> <span>音效(S)</span></div><!-- 重玩 --><div class="operate-btn again small-btn" id="again"><i></i> <span>重玩(R)</span></div><!-- 旋转 --><div class="operate-btn rotate large-btn" id="rotate"><i></i> <span>旋转</span></div><!-- 右移 --><div class="operate-btn operate-left large-btn" id="left"><i></i> <span>左移</span></div><!-- 左移 --><div class="operate-btn operate-right large-btn" id="right"><i></i> <span>右移</span></div><!-- 下移 --><div class="operate-btn down large-btn" id="down"><i></i> <span>下移</span></div><!-- 掉落 --><div class="operate-btn drop larger-btn" id="drop"><i></i> <span>掉落(SPACE)</span></div></div></div><script>// 屏幕适配
+    (() => {      
+      var container = document.getElementById('container');
+      var operate = document.getElementById('operate');
+      function fn() {       
+        var filling = 0;
+        var w = document.documentElement.clientWidth;
+        var h = document.documentElement.clientHeight;
+        var ratio = h / w;
+        var scale;
+        if (ratio >= 1.5) {       
+          scale = w / 640;
+          filling = (h - (937 * scale)) / scale / 3;
+          container.style.cssText = 'padding-top: ' + (Math.floor(filling) + 42) + 'px; padding-bottom: ' + Math.floor(filling) + 'px; margin-top: ' + Math.floor(-468.5 - (filling * 1.5)) + 'px';
+          operate.style.marginTop = (Math.floor(filling) + 20) + 'px';
+        } else {
+          scale = h / 937;
+          container.style.cssText = '';
+          operate.style.marginTop = '';
+        }
+        container.style.transform = 'scale(' + scale + ')';
+      }
+      fn();
+      window.onresize = fn;
+    })();</script><script type="text/javascript" src="bundle-1.0.0.js"></script></body></html>
